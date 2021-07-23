@@ -1,0 +1,257 @@
+@font-face {
+    font-family: "OCR A Extended";
+    src: url("//db.onlinewebfonts.com/t/f2ecc6ef740fcf60de095b0b087dd58d.eot");
+    src: url("//db.onlinewebfonts.com/t/f2ecc6ef740fcf60de095b0b087dd58d.eot?#iefix")
+    format("embedded-opentype"),
+    url("//db.onlinewebfonts.com/t/f2ecc6ef740fcf60de095b0b087dd58d.woff2")
+    format("woff2"),
+    url("//db.onlinewebfonts.com/t/f2ecc6ef740fcf60de095b0b087dd58d.woff")
+    format("woff"),
+    url("//db.onlinewebfonts.com/t/f2ecc6ef740fcf60de095b0b087dd58d.ttf")
+    format("truetype"),
+    url("//db.onlinewebfonts.com/t/f2ecc6ef740fcf60de095b0b087dd58d.svg#OCR A Extended")
+    format("svg");
+}
+
+body{
+    background: #ddeefc;
+    min-height: 100vh;
+    margin: 0px;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+*:focus {
+    outline: none;
+}
+
+.wrapper {
+    min-height: 100vh;
+    display: flex;
+    padding: 50px 15px;
+}
+@media screen and (max-width: 700px), (max-height: 500px) {
+    .wrapper {
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+}
+
+.card-form {
+    max-width: 570px;
+    margin: auto;
+    width: 100%;
+}
+@media screen and (max-width: 576px) {
+    .card-form {
+        margin: 0 auto;
+    }
+}
+.card-form__inner {
+    background: #fff;
+    box-shadow: 0 30px 60px 0 rgba(90, 116, 148, 0.4);
+    border-radius: 10px;
+    padding: 35px;
+    padding-top: 180px;
+}
+@media screen and (max-width: 480px) {
+    .card-form__inner {
+        padding: 25px;
+        padding-top: 165px;
+    }
+}
+@media screen and (max-width: 360px) {
+    .card-form__inner {
+        padding: 15px;
+        padding-top: 165px;
+    }
+}
+.card-form__row {
+    display: flex;
+    align-items: flex-start;
+}
+@media screen and (max-width: 480px) {
+    .card-form__row {
+        flex-wrap: wrap;
+    }
+}
+.card-form__col {
+    flex: auto;
+    margin-right: 35px;
+}
+.card-form__col:last-child {
+    margin-right: 0;
+}
+@media screen and (max-width: 480px) {
+    .card-form__col {
+        margin-right: 0;
+        flex: unset;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .card-form__col:last-child {
+        margin-bottom: 0;
+    }
+}
+.card-form__col.-cvv {
+    max-width: 150px;
+}
+@media screen and (max-width: 480px) {
+    .card-form__col.-cvv {
+        max-width: initial;
+    }
+}
+.card-form__group {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+.card-form__group .card-input__input {
+    flex: 1;
+    margin-right: 15px;
+}
+.card-form__group .card-input__input:last-child {
+    margin-right: 0;
+}
+
+.card-item {
+    max-width: 430px;
+    height: 270px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+}
+@media screen and (max-width: 480px) {
+    .card-item {
+        max-width: 310px;
+        height: 220px;
+        width: 90%;
+    }
+}
+@media screen and (max-width: 360px) {
+    .card-item {
+        height: 180px;
+    }
+}
+.card-item.-active .card-item__side.-front {
+    transform: perspective(1000px) rotateY(180deg) rotateX(0deg) rotateZ(0deg);
+}
+.card-item.-active .card-item__side.-back {
+    transform: perspective(1000px) rotateY(0) rotateX(0deg) rotateZ(0deg);
+}
+
+.card-item__side {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px 0 rgba(14, 42, 90, 0.55);
+    transform: perspective(2000px) rotateY(0deg) rotateX(0deg) rotate(0deg);
+    transform-style: preserve-3d;
+    transition: all 0.8s cubic-bezier(0.71, 0.03, 0.56, 0.85);
+    /*backface-visibility: hidden;*/
+    height: 100%;
+}
+.card-item__side.-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transform: perspective(2000px) rotateY(-180deg) rotateX(0deg) rotate(0deg);
+    z-index: 2;
+    padding: 0;
+    height: 100%;
+}
+.card-item__side.-back .card-item__cover {
+    transform: rotateY(-180deg);
+}
+
+.card-list {
+    margin-bottom: -130px;
+}
+@media screen and (max-width: 480px) {
+    .card-list {
+        margin-bottom: -120px;
+    }
+}
+
+.card-input {
+    margin-bottom: 20px;
+}
+.card-input__label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #1a3b5d;
+    width: 100%;
+    display: block;
+    user-select: none;
+}
+.card-input__input {
+    width: 100%;
+    height: 50px;
+    border-radius: 5px;
+    box-shadow: none;
+    border: 1px solid #ced6e0;
+    transition: all 0.3s ease-in-out;
+    font-size: 18px;
+    padding: 5px 15px;
+    background: none;
+    color: #1a3b5d;
+    font-family: "Source Sans Pro", sans-serif;
+}
+.card-input__input:hover, .card-input__input:focus {
+    border-color: #3d9cff;
+}
+.card-input__input:focus {
+    box-shadow: 0px 10px 20px -13px rgba(32, 56, 117, 0.35);
+}
+.card-input__input.-select {
+    -webkit-appearance: none;
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAeCAYAAABuUU38AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAUxJREFUeNrM1sEJwkAQBdCsngXPHsQO9O5FS7AAMVYgdqAd2IGCDWgFnryLFQiCZ8EGnJUNimiyM/tnk4HNEAg/8y6ZmMRVqz9eUJvRaSbvutCZ347bXVJy/ZnvTmdJ862Me+hAbZCTs6GHpyUi1tTSvPnqTpoWZPUa7W7ncT3vK4h4zVejy8QzM3WhVUO8ykI6jOxoGA4ig3BLHcNFSCGqGAkig2yqgpEiMsjSfY9LxYQg7L6r0X6wS29YJiYQYecemY+wHrXD1+bklGhpAhBDeu/JfIVGxaAQ9sb8CI+CQSJ+QmJg0Ii/EE2MBiIXooHRQhRCkBhNhBcEhLkwf05ZCG8ICCOpk0MULmvDSY2M8UawIRExLIQIEgHDRoghihgRIgiigBEjgiFATBACAgFgghEwSAAGgoBCBBgYAg5hYKAIFYgHBo6w9RRgAFfy160QuV8NAAAAAElFTkSuQmCC");
+    background-size: 12px;
+    background-position: 90% center;
+    background-repeat: no-repeat;
+    padding-right: 30px;
+}
+
+.flip-card {
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    perspective: 1000px;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.flip-card-back {
+    /*background-color: #2980b9;*/
+    /*color: white;*/
+    transform: rotateY(180deg);
+}
+.ktpback{
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}

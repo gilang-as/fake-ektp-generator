@@ -1,0 +1,32 @@
+{
+  "short_name": "Fake eKTP Generator",
+  "name": "Fake eKTP Generator",
+  "lang": "en-ID",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#ddeefc",
+  "background_color": "#ddeefc",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "icon144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "icon192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "icon512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+}
